@@ -1,0 +1,28 @@
+server:
+  port: 18082
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 10
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/wanyun?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    #使用druid连接池
+  #mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    mapper-locations: com.data.mapper.*Mapper.xml
+  type-aliases-package: pojos
+#打印SQL
+
+logging:
+  level:
+    com:
+      wanyun:
+        rainstorm: info
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm} - %msg%n"
+  path: "D:/wanyun/logs/yidong/"
+
